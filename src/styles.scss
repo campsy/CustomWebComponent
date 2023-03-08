@@ -1,0 +1,118 @@
+:host {
+  .container {
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-family: "Helvetica";
+
+    .tile-container {
+      width: 100%;
+      display: flex;
+      position: relative;
+      background: #f4f6f7;
+      border-radius: 8px;
+      margin-top: 10px;
+      padding: 10px;
+
+      .icon {
+        background: #204253;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        margin-right: 20px;
+
+        &:after {
+          display: flex;
+          content: "";
+          width: 60%;
+          height: 60%;
+          transform: rotate(-20deg);
+        }
+
+        &.identification {
+          &:after {
+            background: url("./images/identification.svg") no-repeat;
+            background-size: contain;
+          }
+        }
+        &.address {
+          &:after {
+            background: url("./images/address.svg") no-repeat;
+            background-size: contain;
+          }
+        }
+        &.payment {
+          &:after {
+            background: url("./images/payment.svg") no-repeat;
+            background-size: contain;
+          }
+        }
+      }
+
+      &.success {
+        background: #8fe4b1;
+        display: none;
+
+        &.active {
+          display: flex;
+        }
+
+        .icon {
+          background: #fff;
+
+          &:after {
+            background: url("./images/tick.svg") no-repeat 100%;
+            transform: rotate(0deg);
+            background-size: contain;
+          }
+        }
+        &:after {
+          display: block;
+          content: "";
+          background: url("./images/close.svg") no-repeat;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          width: 14px;
+          height: 14px;
+          font-weight: bold;
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
+
+      .content {
+        flex-grow: 1;
+        h2 {
+          font-size: 18px;
+          margin: 0 0 5px;
+          font-weight: 400;
+        }
+
+        p {
+          font-size: 12px;
+          line-height: 14px;
+          margin: 0;
+        }
+        .btn {
+          display: flex;
+          height: 42px;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          font-size: 15px;
+          background: #307df1;
+          border-radius: 10px;
+          text-decoration: none;
+          color: #fff;
+          margin: 10px 0 0;
+        }
+      }
+    }
+  }
+}
